@@ -1,0 +1,16 @@
+name: On Push Workflow
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: pull repo
+      - uses: actions/checkout@v4
+      - name: setup node
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: install dependencies
+        run: npm ci
+      - name: run tests
+        run: npm test
