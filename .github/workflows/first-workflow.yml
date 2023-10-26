@@ -1,5 +1,6 @@
 name: On Push Workflow
-on: push
+# This indicates that the workflow will run for each push or it can be executed manually
+on: [push, workflow_dispatch]
 jobs:
   test:
     runs-on: ubuntu-latest
